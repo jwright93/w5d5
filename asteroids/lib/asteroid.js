@@ -1,7 +1,7 @@
 const Util = require("./util.js");
 const movingObject = require("./moving_object.js");
 
-const COLOR = "#cccccc";
+const COLOR = "#000000";
 const RADIUS = 150;
 
 function scale (vec, m) {
@@ -27,9 +27,11 @@ function Asteroid(options) {
     color: this.color
   };
 
-  return new movingObject.prototype.constructor(movingOptions);
+  movingObject.call(this, movingOptions);
 }
 
 Util.inherits(Asteroid, movingObject);
 
-console.log(new Asteroid({ pos: [30, 30] }));
+// console.log(new Asteroid({ pos: [30, 30] }));
+
+module.exports = Asteroid;
